@@ -43,14 +43,9 @@ input {
     margin: auto;
 }
 
-/*.addTaskButton {
-    width: 10em;
-    height: 2em;
-    margin: auto;
-    border-radius: 10px;
-}
-*/
+
 .btn-12{
+    margin-bottom: 2em;
     margin: auto;
     right: 20px;
     bottom: 20px;
@@ -119,4 +114,39 @@ input {
     -moz-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
   }
+
+
+ /* Estilos para los botones Editar y Eliminar */
+.edit-btn{
+  padding: 5px 10px;
+  background-color: #077b83;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Estilos cuando el cursor está sobre los botones */
+.edit-btn:hover {
+  background-color: #093c49;
+}
+
+/* Estilos para los botones Editar y Eliminar */
+.delete-btn {
+  padding: 5px 10px;
+  background-color: #9e4040;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* Estilos cuando el cursor está sobre los botones */
+.delete-btn:hover {
+  background-color: #470707;
+}
+
+ 
   

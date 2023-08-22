@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const addButton = document.querySelector('.custom-btn');
   const taskList = document.getElementById('taskList');
 
-  // Fetch tasks from JSON Server
+  // Buscar tareas en JSON Server
   async function fetchTasks() {
     const response = await fetch('http://localhost:3000/tasks');
     const tasks = await response.json();
     return tasks;
   }
 
-  // Display tasks on the page
+  // Ver tarea en la pag
   async function displayTasks() {
     taskList.innerHTML = '';
 
@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <input type="checkbox" class="complete-checkbox" ${task.completed ? 'checked' : ''}>
           <span class="task-title ${task.completed ? 'completed' : ''}">${task.title}: ${task.description}</span>
         </label>
-        <button class="edit-btn">Editar</button>
-        <button class="delete-btn">Eliminar</button>
+        <div class="btns">
+        <button class="edit-btn btn">Editar</button>
+        <button class="delete-btn btn">Eliminar</button>
+        </div>
       `;
 
       const completeCheckbox = taskItem.querySelector('.complete-checkbox');

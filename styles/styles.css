@@ -9,10 +9,17 @@ body {
     font-family: 'Caveat';
 }
 
+.section-logo {
+  align-items: center;
+  margin: auto;
+  width: 15em;
+}
+
 .logo {
-    width: 30em;
+    width: 15em;
     margin-left: 2em;
     margin-top: 2em;
+    margin: auto;
     
 }
 

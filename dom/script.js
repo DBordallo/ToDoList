@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Editar tarea
   async function editTask(taskId, currentTitle, currentDescription) {
-    const newTitle = prompt('Enter the new title:', currentTitle);
-    const newDescription = prompt('Enter the new description:', currentDescription);
+    const newTitle = prompt('Nueva tarea:', currentTitle);
+    const newDescription = prompt('Nueva descripción:', currentDescription);
 
     if (newTitle !== null && newDescription !== null) {
       const updatedTask = {

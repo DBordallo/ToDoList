@@ -129,37 +129,67 @@ input {
     transform: rotateX(-90deg);
   }
 
+  .edit-btn {
+    width: 4em;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 1px solid #000;
+    color: #000;
+    background: transparent;
+    z-index: 0;
+  }
+  .edit-btn:hover:after {
+    top: 0;
+    left: 0;
+  }
+  .edit-btn:after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s;
+    background-color: #80ed99;
+  }
 
- /* Estilos para los botones Editar y Eliminar */
-.edit-btn{
-  padding: 5px 10px;
-  background-color: #077b83;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-/* Estilos cuando el cursor está sobre los botones */
-.edit-btn:hover {
-  background-color: #093c49;
-}
-
-/* Estilos para los botones Editar y Eliminar */
 .delete-btn {
+  width: 4em;
+  color: #fff;
   padding: 5px 10px;
-  background-color: #9e4040;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
+  font-weight: bolder;
   cursor: pointer;
-  margin-right: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 1px solid #000;
+  color: #ffffff;
+  background: transparent;
+  z-index: 0;
 }
-
-/* Estilos cuando el cursor está sobre los botones */
-.delete-btn:hover {
-  background-color: #470707;
+.delete-btn:hover:after {
+  top: 0;
+  left: 0;
+  background-color: #631019;
+}
+.delete-btn:after {
+  content: "";
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 5px;
+  left: 5px;
+  transition: 0.2s;
+  background-color: #ef233c;
 }
 
 .complete-checkbox {
@@ -205,10 +235,54 @@ input {
 .btns {
   display: flex;
   flex-direction: row;
+  justify-content:space-around;
 }
 
 .btn {
   text-align: center;
   margin: auto;
   width: 4em;
+}
+
+
+@media (min-width: 800px) {
+
+
+    #taskList {
+      display: flex;
+      flex-wrap: wrap;
+      width: 35em;
+      align-items: stretch;
+      justify-content:space-around;
+    }
+    
+    .section-logo {
+      align-items: center;
+      margin: auto;
+      width: 50em;
+    }
+    
+    
+    .task {
+      margin: auto;
+      align-items: center;
+        width: 20em;
+        margin-bottom: 1em;
+    }
+    
+    .description {
+      justify-content: center;
+      align-items: center;
+        width: 20em;
+        margin-bottom: 1em;
+    }
+    
+    .addTask {
+      align-items: center;
+      
+    }
+    .btn-12{
+      align-items: center;
+    }
+    
 }

@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const localStorageState = localStorage.getItem(`task_${task.id}`);
     if (localStorageState === 'completed') {
       completeCheckbox.checked = true;
-      completeCheckbox.dispatchEvent(new Event('change')); // Trigger change event to apply styles
+    
     }
 
       const editButton = taskItem.querySelector('.edit-btn');
@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Tarea completada
   async function completeTask(taskId, completed) {
-    const task = await fetch(`http://localhost:3000/tasks/${taskId}`);
+    const taskResponse = await fetch(`http://localhost:3000/tasks/${taskId}`);
+    const task = await taskResponse.json();
+
     const updatedTask = {
       ...task,
       completed: completed

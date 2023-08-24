@@ -20,18 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
     tasks.forEach(task => {
       const taskItem = document.createElement('li');
       taskItem.innerHTML = `
-        <label class="task-label">
-          <input type="checkbox" class="complete-checkbox" ${task.completed ? 'checked' : ''}>
-          <span class="task-title ${task.completed ? 'completed' : ''}">${task.title}: ${task.description}</span>
-        </label>
-        <div class="btns">
-        <button class="edit-btn btn">Editar</button>
-        <button class="delete-btn btn">Eliminar</button>
-        </div>
+      <label class="task-label">
+      <input type="checkbox" class="complete-checkbox" ${task.completed ? 'checked' : ''}>
+      <span class="task-title ${task.completed ? 'completed' : ''}">${task.title}: ${task.description}</span>
+    </label>
+    <button class="edit-btn">Editar</button>
+    <button class="delete-btn">Eliminar</button>
       `;
 
       const completeCheckbox = taskItem.querySelector('.complete-checkbox');
-      completeCheckbox.addEventListener('change', () => completeTask);
+      completeCheckbox.addEventListener('change', () => completeTask(task.id, completeCheckbox.checked));
+
+      const localStorageState = localStorage.getItem(`task_${task.id}`);
+    if (localStorageState === 'completed') {
+      completeCheckbox.checked = true;
+      completeCheckbox.dispatchEvent(new Event('change')); // Trigger change event to apply styles
+    }
 
       const editButton = taskItem.querySelector('.edit-btn');
       editButton.addEventListener('click', () => editTask(task.id, task.title, task.description));
@@ -79,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       body: JSON.stringify(updatedTask),
     });
+
+    localStorage.setItem(`task_${taskId}`, completed ? 'completed' : 'incomplete');
 
     displayTasks();
   }

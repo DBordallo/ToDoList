@@ -38,6 +38,9 @@ Before you begin, make sure you have the following:
     
 4.  Open the `index.html` file in your browser to use the Task Management App.
 
+## GitHub Pages
+- https://dbordallo.github.io/ToDoList/
+
 ## Figma
 - https://www.figma.com/file/YdOc5jwsDMYZZOEV5JDjft/Untitled?type=design&node-id=4%3A7&mode=design&t=skAMfROaqnLlL2QP-1
 

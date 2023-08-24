@@ -64,8 +64,5 @@ The app provides the following functionalities:
 
 Contributions are welcome! If you find any issues or want to enhance the app, feel free to submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](https://chat.openai.com/LICENSE).
 
 ----------
